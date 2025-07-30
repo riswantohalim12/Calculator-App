@@ -1,0 +1,89 @@
+/* style.css */
+:root {
+    --bg-color: #2c3e50; /* Warna latar belakang utama */
+    --display-color: #34495e; /* Warna latar display */
+    --text-color: #ecf0f1; /* Warna teks */
+    --btn-bg: #2c3e50; /* Warna tombol */
+    --operator-btn-color: #e67e22; /* Warna aksen untuk operator */
+    --shadow-light: #4a6572; /* Bayangan terang */
+    --shadow-dark: #1a252f; /* Bayangan gelap */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.calculator-container {
+    width: 320px;
+    padding: 20px;
+    border-radius: 25px;
+    background: var(--bg-color);
+    box-shadow: 10px 10px 20px var(--shadow-dark),
+                -10px -10px 20px var(--shadow-light);
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+.display input {
+    width: 100%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    border: none;
+    background: var(--display-color);
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+                inset -5px -5px 10px var(--shadow-light);
+    font-size: 2.5em;
+    color: var(--text-color);
+    text-align: right;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px var(--shadow-dark),
+                -5px -5px 10px var(--shadow-light);
+    transition: all 0.1s ease-in-out;
+}
+
+.btn:active {
+    box-shadow: inset 3px 3px 7px var(--shadow-dark),
+                inset -3px -3px 7px var(--shadow-light);
+    font-size: 1.15em;
+}
+
+.btn.operator {
+    color: var(--operator-btn-color);
+}
+
+.btn.btn-equal {
+    grid-column: span 2;
+    background-color: var(--operator-btn-color);
+    color: #fff;
+}
+
+.btn.btn-equal:active {
+    background-color: #d35400; /* Warna lebih gelap saat ditekan */
+}
